@@ -410,7 +410,7 @@ export default function EventDetailClient({
             <div className="Event_25_popUpBody__Ae7Z0" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexShrink: 0 }}>
                 <img
-                  src={activeSpeaker.image || '/images/placeholders/speaker.png'}
+                  src={activeSpeaker.image || 'public/images/placeholders/speaker.png'}
                   alt={activeSpeaker.name}
                   style={{
                     width: '160px',

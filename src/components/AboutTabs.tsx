@@ -29,29 +29,29 @@ const S = {
 
   // Image strip — full-width cinematic header
   imgWrap: {
-    position: 'relative',
+    position: 'relative' as const,
     width: '100%',
     height: 260,
     overflow: 'hidden',
   },
   img: {
     width: '100%', height: '100%',
-    objectFit: 'cover', display: 'block',
+    objectFit: 'cover' as const, display: 'block',
     transition: `transform 0.6s ${T.ease}, opacity 0.4s ease`,
   },
   imgOverlay: {
-    position: 'absolute', inset: 0,
+    position: 'absolute' as const, inset: 0,
     background: 'linear-gradient(to bottom, rgba(10,10,10,0) 40%, rgba(10,10,10,0.95) 100%)',
-    pointerEvents: 'none',
+    pointerEvents: 'none' as const,
   },
   // Floating TED-style index badge
   badge: {
-    position: 'absolute', top: 18, left: 20,
+    position: 'absolute' as const, top: 18, left: 20,
     background: T.red,
     color: T.white,
     fontSize: 10, fontWeight: 700, letterSpacing: 1.5,
     padding: '4px 10px', borderRadius: 4,
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const,
   },
 
   // Body
@@ -69,11 +69,11 @@ const S = {
 
   // Tab row — pill chips
   tabRow: {
-    display: 'flex', gap: 6, flexWrap: 'wrap',
+    display: 'flex', gap: 6, flexWrap: 'wrap' as const,
     borderTop: `1px solid ${T.border}`,
     paddingTop: 16,
   },
-  tab: (active) => ({
+  tab: (active: boolean) => ({
     display: 'flex', alignItems: 'center', gap: 6,
     padding: '6px 14px',
     borderRadius: 980,
@@ -84,7 +84,7 @@ const S = {
     cursor: 'pointer',
     letterSpacing: '-0.1px',
     transition: `all 0.2s ${T.ease}`,
-    userSelect: 'none',
+    userSelect: 'none' as const,
   }),
 
   // Progress bar (auto-advance)
@@ -93,7 +93,7 @@ const S = {
     background: T.border,
     overflow: 'hidden',
   },
-  progressBar: (pct) => ({
+  progressBar: (pct: number) => ({
     height: '100%',
     width: `${pct}%`,
     background: T.red,
@@ -116,7 +116,7 @@ export default function AboutTabs() {
   const [fading, setFading]     = useState(false);
   const elapsed = useRef(0);
 
-  const goTo = (idx) => {
+  const goTo = (idx: number) => {
     if (idx === active) return;
     setFading(true);
     setTimeout(() => { setActive(idx); setFading(false); elapsed.current = 0; setProgress(0); }, 260);

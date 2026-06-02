@@ -6,7 +6,7 @@ import { FALLBACK_TEXTS } from '../../data/fallbackTexts';
 
 export const metadata: Metadata = {
   title: 'Our Events | TEDx Integral',
-  description: 'Explore the journey and themes of TEDx Integral events, from The Ship of Theseus to upcoming editions.',
+  description: 'Explore the journey and themes of TEDx Integral events, from Tessellation to upcoming editions.',
 };
 
 export default function EventsPage() {
