@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: '/sa/tedxiitg',
+  basePath: '/sa/tedxiul',
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,

@@ -3,7 +3,7 @@ export const ORGANIZING_TEAM = [
     id: "team-placeholder-01",
     name: "Organizing Committee",
     role: "Licensee / Lead Organizer",
-    image: "/images/placeholders/team.png",
+    image: "sa/tedxiul/images/placeholders/team.png",
     linkedin: "https://www.linkedin.com/"
   },
   {

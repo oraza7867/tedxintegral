@@ -3,7 +3,7 @@ export const SITE_SETTINGS = {
   title: "TEDx Integral",
   description: "TEDx event independently organized by volunteers.",
   themeColor: "#e62b1e",
-  basePath: "/sa/tedxiitg",
+  basePath: "/sa/tedxiul",
   contactEmail: "contact@tedxintegral.com",
   socials: {
     instagram: "https://www.instagram.com/tedx_integral/",
@@ -24,8 +24,8 @@ export const SITE_SETTINGS = {
 export const resolveAsset = (path) => {
   if (!path) return '';
   if (typeof path !== 'string') return path;
-  if (path.startsWith('/') && !path.startsWith('/sa/tedxiitg')) {
-    return `/sa/tedxiitg${path}`;
+  if (path.startsWith('/') && !path.startsWith('/sa/tedxiul')) {
+    return `/sa/tedxiul${path}`;
   }
   return path;
 };

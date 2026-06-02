@@ -3,8 +3,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { SPEAKERS_DATA as speakersData } from '../data/speakersData';
-import { FALLBACK_TEXTS } from '../data/fallbackTexts';
-import { resolveAsset } from '../data/siteSettings';
 
 
 const SpeakerCylinder = () => {
@@ -14,10 +12,9 @@ const SpeakerCylinder = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const visible = true;
 
-  const dataList = speakersData || [];
-  const numSpeakers = dataList.length;
-  const angleStep = numSpeakers > 0 ? 360 / numSpeakers : 0;
-  const radius = numSpeakers > 0 ? (270 * numSpeakers) / (2 * Math.PI) : 0; // Radius of the 3D cylinder based on width of cards
+  const numSpeakers = speakersData.length;
+  const angleStep = 360 / numSpeakers;
+  const radius = (270 * numSpeakers) / (2 * Math.PI); // Radius of the 3D cylinder based on width of cards
 
   const dragData = useRef({
     rotationY: 0,
@@ -28,7 +25,6 @@ const SpeakerCylinder = () => {
   });
 
   useEffect(() => {
-    if (numSpeakers === 0) return;
     // Set 3D transform properties on cards
     if (cardsRef.current.length > 0) {
       cardsRef.current.forEach((card, idx) => {
@@ -144,7 +140,7 @@ const SpeakerCylinder = () => {
     requestAnimationFrame(animateClick);
   };
 
-  const activeSpeaker = dataList[activeIndex];
+  const activeSpeaker = speakersData[activeIndex];
 
   return (
     <div className="speakers-section-container">
@@ -154,67 +150,59 @@ const SpeakerCylinder = () => {
         </h1>
         <div className="section-subtitle">Ideas That Deserve The Spotlight</div>
       </div>
-      {numSpeakers === 0 ? (
-        <div style={{ padding: '60px 24px', backgroundColor: 'rgba(255,255,255,0.02)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: '16px', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          <img src={resolveAsset("/images/placeholders/speaker.png")} alt="No speakers yet" style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', opacity: 0.4, margin: '0 auto 20px', border: '3px solid rgba(255,255,255,0.1)' }} />
-          <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '8px', color: '#fff' }}>{FALLBACK_TEXTS.speakers.heading}</h3>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{FALLBACK_TEXTS.speakers.subheading}</p>
-        </div>
-      ) : (
-        <div className="cylinder-layout">
-          <div className="cylinder-left" ref={containerRef}>
-            <div className="cylinder-stage">
-              <div className="cylinder-viewport">
-                <div className="cylinder-obj" ref={cylinderRef}>
-                  {dataList.map((speaker, idx) => (
+      <div className="cylinder-layout">
+        <div className="cylinder-left" ref={containerRef}>
+          <div className="cylinder-stage">
+            <div className="cylinder-viewport">
+              <div className="cylinder-obj" ref={cylinderRef}>
+                {speakersData.map((speaker, idx) => (
+                  <div
+                    key={idx}
+                    className="cyl-card"
+                    ref={(el) => (cardsRef.current[idx] = el)}
+                    onClick={(e) => handleCardClick(idx, e)}
+                  >
                     <div
-                      key={idx}
-                      className="cyl-card"
-                      ref={(el) => (cardsRef.current[idx] = el)}
-                      onClick={(e) => handleCardClick(idx, e)}
-                    >
-                      <div
-                        className="cyl-photo"
-                        style={{
-                          backgroundImage: `url(${resolveAsset(speaker.img || '/images/placeholders/speaker.png')})`,
-                        }}
-                      />
-                      <div className="cyl-meta">
-                        <div className="cyl-name">{speaker.name}</div>
-                        <div className="cyl-title">{speaker.title}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="cyl-hint">Scroll or drag to rotate</div>
-            </div>
-          </div>
-          <div className="cylinder-right">
-            <aside className={`info-panel ${visible ? '' : 'hidden'}`}>
-              {activeSpeaker && (
-                <>
-                  <div className="info-header-container">
-                    <div className="info-text-group">
-                      <div className="info-badge">Speaker</div>
-                      <h2 className="info-name-large">{activeSpeaker.name}</h2>
-                      <div className="info-title-large">{activeSpeaker.title}</div>
-                    </div>
-                    <div
-                      className="info-photo-right"
+                      className="cyl-photo"
                       style={{
-                        backgroundImage: `url(${resolveAsset(activeSpeaker.img || '/images/placeholders/speaker.png')})`,
+                        backgroundImage: `url(${speaker.img})`,
                       }}
                     />
+                    <div className="cyl-meta">
+                      <div className="cyl-name">{speaker.name}</div>
+                      <div className="cyl-title">{speaker.title}</div>
+                    </div>
                   </div>
-                  <div className="info-divider" />
-                  <div className="info-body">{activeSpeaker.bio}</div>
-                </>
-              )}
-            </aside>
+                ))}
+              </div>
+            </div>
+            <div className="cyl-hint">Scroll or drag to rotate</div>
           </div>
         </div>
-      )}
+        <div className="cylinder-right">
+          <aside className={`info-panel ${visible ? '' : 'hidden'}`}>
+            {activeSpeaker && (
+              <>
+                <div className="info-header-container">
+                  <div className="info-text-group">
+                    <div className="info-badge">Speaker</div>
+                    <h2 className="info-name-large">{activeSpeaker.name}</h2>
+                    <div className="info-title-large">{activeSpeaker.title}</div>
+                  </div>
+                  <div
+                    className="info-photo-right"
+                    style={{
+                      backgroundImage: `url(${activeSpeaker.img})`,
+                    }}
+                  />
+                </div>
+                <div className="info-divider" />
+                <div className="info-body">{activeSpeaker.bio}</div>
+              </>
+            )}
+          </aside>
+        </div>
+      </div>
     </div>
   );
 };

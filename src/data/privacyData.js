@@ -1,7 +1,7 @@
 export const PRIVACY_PAGE_CONTENT = {
   metaTitle: 'Privacy Policy | TEDx Integral',
   metaDescription: 'Read the Privacy Policy of TEDx Integral, explaining how we collect, safeguard, and handle your personal information.',
-  updatedDate: 'Date Updated: 14 December, 2025',
+  updatedDate: '',
   introduction: {
     heading: 'Introduction',
     paragraphs: [

@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className="navbardesktop_sidebar__wvkNt">
       <div className="navbardesktop_logo__r0-tE">
-        <img src="/sa/tedxiitg/images/TEDx26 Logo.png" alt="TEDx Integral Logo" />
+        <img src="/sa/tedxiul/images/TEDx26 Logo.png" alt="TEDx Integral Logo" />
       </div>
       <div className="navbardesktop_menu__MRhxn">
         {navItems.map((item, index) => {

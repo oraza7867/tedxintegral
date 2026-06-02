@@ -17,7 +17,7 @@ export const GALLERY_DATA = [
   {
     id: "highlights",
     label: "TEDx Integral Highlights",
-    coverImage: "/images/placeholders/gallery-cover.png",
+    coverImage: "",
     dragImages: [
       "/images/placeholders/gallery-cover.png",
       "/images/placeholders/gallery-cover.png",

@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="footer-outer">
       <div className="row1">
         <Link href="/" onClick={handleLinkClick}>
-          <img src="/sa/tedxiitg/images/WhiteTextLogo.png" alt="TEDx Integral" className="footer-logo" />
+          <img src="/sa/tedxiul/images/WhiteTextLogo.png" alt="TEDx Integral" className="footer-logo" />
         </Link>
       </div>
       <div className="footer-row1">

@@ -41,7 +41,7 @@ const Preloader = ({ onVideoEnd, duration = 2500 }) => {
         {/* Text lockup */}
         <div className="preloader-lockup">
           <span className="preloader-ted">TED</span>
-          <span className="preloader-x-text">x</span>
+          <span className="preloader-x-text">X</span>
           <span className="preloader-name">Integral</span>
         </div>
 
