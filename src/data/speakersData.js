@@ -15,14 +15,14 @@ export const SPEAKERS_DATA = [
   },
   {
     id: "spk-placeholder-03",
-    name: "Saima",
+    name: "Mahi",
     title: "Change Maker & Leader",
     img: "/images/placeholders/speaker.png",
     bio: "A thought leader who will explore new paradigms and share ideas worth spreading. Full details will be revealed in the coming weeks."
   },
   {
     id: "spk-placeholder-03",
-    name: "Dolan Yadav",
+    name: "Rehan",
     title: "Change Maker & Leader",
     img: "/images/placeholders/speaker.png",
     bio: "A thought leader who will explore new paradigms and share ideas worth spreading. Full details will be revealed in the coming weeks."

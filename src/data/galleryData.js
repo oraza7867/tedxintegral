@@ -2,31 +2,31 @@ export const GALLERY_DATA = [
   {
     id: "ted-talks",
     label: "TEDx Talks",
-    coverImage: "/images/placeholders/gallery-cover.png",
+    coverImage: "/sa/tedxiul/images/tedd.jpg",
     dragImages: [
-      "/images/placeholders/gallery-cover.png",
-      "/images/placeholders/gallery-cover.png",
-      "/images/placeholders/gallery-cover.png"
+      "/sa/tedxiul/images/placeholders/gallery-cover.png",
+      "/sa/tedxiul/images/placeholders/gallery-cover.png",
+      "/sa/tedxiul/images/placeholders/gallery-cover.png"
     ],
     carouselImages: [
-      { id: "car-talks-01", image: "/images/placeholders/gallery-cover.png" },
-      { id: "car-talks-02", image: "/images/placeholders/gallery-cover.png" },
-      { id: "car-talks-03", image: "/images/placeholders/gallery-cover.png" }
+      { id: "car-talks-01", image: "/sa/tedxiul/images/placeholders/gallery-cover.png" },
+      { id: "car-talks-02", image: "/sa/tedxiul/images/placeholders/gallery-cover.png" },
+      { id: "car-talks-03", image: "/sa/tedxiul/images/placeholders/gallery-cover.png" }
     ]
   },
   {
     id: "highlights",
     label: "TEDx Integral Highlights",
-    coverImage: "",
+    coverImage: "/sa/tedxiul/images/tedintegral.png",
     dragImages: [
-      "/images/placeholders/gallery-cover.png",
-      "/images/placeholders/gallery-cover.png",
-      "/images/placeholders/gallery-cover.png"
+      "/sa/tedxiul/images/placeholders/gallery-cover.png",
+      "/sa/tedxiul/images/placeholders/gallery-cover.png",
+      "/sa/tedxiul/images/placeholders/gallery-cover.png"
     ],
     carouselImages: [
-      { id: "car-high-01", image: "/images/placeholders/gallery-cover.png" },
-      { id: "car-high-02", image: "/images/placeholders/gallery-cover.png" },
-      { id: "car-high-03", image: "/images/placeholders/gallery-cover.png" }
+      { id: "car-high-01", image: "/sa/tedxiul/images/placeholders/gallery-cover.png" },
+      { id: "car-high-02", image: "/sa/tedxiul/images/placeholders/gallery-cover.png" },
+      { id: "car-high-03", image: "/sa/tedxiul/images/placeholders/gallery-cover.png" }
     ]
   }
 ];

@@ -1,7 +1,7 @@
 export const TERMS_PAGE_CONTENT = {
   metaTitle: 'Terms and Conditions | TEDx Integral',
   metaDescription: 'Read the Terms and Conditions of TEDx Integral, explaining the rules and regulations governing event attendance, member registrations, and acceptable use.',
-  updatedDate: 'Date Updated: 14 December, 2025',
+  updatedDate: '',
   introduction: {
     heading: 'Introduction',
     paragraphs: [

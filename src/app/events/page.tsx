@@ -17,7 +17,7 @@ export default function EventsPage() {
       <div className="events_upper__LIg3x" style={{ position: 'relative', width: '100%', height: 'auto', overflow: 'hidden' }}>
         <div className="events_homeimage__pfyrI" style={{ width: '100%', height: 'auto' }}>
           <img
-            src="/images/eventsHome/coverImage2.png"
+            src="/sa/tedxiul/images/tedintegral.png"
             alt="Events Timeline Banner"
             style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '50vh', objectFit: 'cover' }}
           />

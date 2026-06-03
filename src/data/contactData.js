@@ -7,7 +7,7 @@ export const CONTACT_PAGE_CONTENT = {
   email: 'contact@tedxintegral.com',
   address: 'XYZ',
   venue: {
-    title: 'Main Auditorium',
+    title: 'XXX',
     subtitle: 'CONFERENCE VENUE',
     description: 'MESSAGE',
     location: 'XYZ',
