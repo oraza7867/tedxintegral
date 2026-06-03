@@ -385,7 +385,7 @@ const CanvasHero = () => {
       <canvas ref={canvasRef} style={styles.canvas} />
       
       <motion.section style={{ ...styles.heroSection, opacity: opacityHero }}>
-        <img src={resolveAsset("/images/homeimg.png")} alt="Hero" style={styles.heroImage} />
+        <img src={resolveAsset("/sa/tedxiul/images/tedintegral.png")} alt="Hero" style={styles.heroImage} />
       </motion.section>
 
       <div style={styles.scrollSpace} />
