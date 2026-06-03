@@ -173,6 +173,7 @@ const S = {
     border: `1px solid ${type === 'success' ? tokens.color.success : tokens.color.error}`,
     color: type === 'success' ? tokens.color.success : tokens.color.error,
   }),
+  // ─── Responsive additions ──────────────────────────────────────────────────
   spinnerCss: `
     @keyframes _spin { to { transform: rotate(360deg); } }
     ._spinner { animation: _spin 0.8s linear infinite; }
@@ -180,6 +181,40 @@ const S = {
     ._btn:hover:not(:disabled) { background: ${tokens.color.accentHover} !important; transform: scale(1.02); }
     ._btn:active:not(:disabled) { transform: scale(0.98); }
     ._info-row:hover { color: rgba(255,255,255,0.95) !important; }
+
+    @media (max-width: 640px) {
+      ._contact-wrap {
+        flex-direction: column !important;
+        border-radius: 16px !important;
+        margin: 0 12px !important;
+      }
+      ._contact-info {
+        min-width: unset !important;
+        max-width: unset !important;
+        padding: 28px 24px !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+      }
+      ._contact-info h2 {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+      }
+      ._contact-info ._divider-full {
+        display: none !important;
+      }
+      ._contact-form {
+        padding: 28px 24px !important;
+      }
+      ._form-row {
+        flex-direction: column !important;
+      }
+      ._contact-btn {
+        width: 100% !important;
+        align-self: stretch !important;
+      }
+    }
   `,
 };
 
@@ -234,13 +269,13 @@ export default function ContactForm() {
   });
 
   return (
-    <div style={S.wrap}>
+    <div style={S.wrap} className="_contact-wrap">
       <style>{S.spinnerCss}</style>
 
       {/* ── Info Panel ─────────────────────────────────────────── */}
-      <aside style={S.info}>
+      <aside style={S.info} className="_contact-info">
         <h2 style={S.infoHeading}>Contact Us</h2>
-        <div style={S.divider} />
+        <div style={S.divider} className="_divider-full" />
 
         <a href={`tel:${CONTACT_PAGE_CONTENT.phone}`} style={S.infoRow} className="_info-row">
           <span style={S.infoIcon}>📞</span> {CONTACT_PAGE_CONTENT.phone}
@@ -253,14 +288,14 @@ export default function ContactForm() {
           {CONTACT_PAGE_CONTENT.instagram}
         </a>
 
-        <div style={S.divider} />
+        <div style={S.divider} className="_divider-full" />
         <span style={{ ...S.infoRow, cursor: 'default', fontSize: 13 }}>
           <span style={S.infoIcon}>📍</span> {CONTACT_PAGE_CONTENT.address}
         </span>
       </aside>
 
       {/* ── Form Panel ─────────────────────────────────────────── */}
-      <section style={S.form}>
+      <section style={S.form} className="_contact-form">
         <h1 style={S.heading}>Leave a Message</h1>
         <p style={S.subheading}>We'd love to hear from you.</p>
 
@@ -271,11 +306,11 @@ export default function ContactForm() {
         )}
 
         <form onSubmit={handleSubmit} style={{ display: 'contents' }}>
-          <div style={S.row}>
+          <div style={S.row} className="_form-row">
             <input {...inputProps('firstName', 'First Name *')} required />
             <input {...inputProps('lastName',  'Last Name')} />
           </div>
-          <div style={S.row}>
+          <div style={S.row} className="_form-row">
             <input {...inputProps('email', 'Email Address *', 'email')} required />
             <input {...inputProps('phone', 'Phone Number *')} required />
           </div>
@@ -289,7 +324,7 @@ export default function ContactForm() {
               onChange={handleChange} disabled={loading} style={S.checkbox} />
             Subscribe to newsletter
           </label>
-          <button type="submit" className="_btn" disabled={loading} style={S.btn}>
+          <button type="submit" className="_btn _contact-btn" disabled={loading} style={S.btn}>
             {loading ? <><Spinner /> Sending…</> : 'Send Message'}
           </button>
         </form>
