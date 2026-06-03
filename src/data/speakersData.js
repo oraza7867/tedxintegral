@@ -10,7 +10,7 @@ export const SPEAKERS_DATA = [
     id: "spk-placeholder-02",
     name: "Aamir",
     title: "Creative Thinker & Designer",
-    img: "/sa/tedxiul/images/placeholders/sole.png",
+    img: "/sa/tedxiul/images/placeholders/sol.png",
     bio: "We are preparing to bring you voices that challenge the status quo, spark conversation, and inspire community-driven impact."
   },
   {
@@ -24,7 +24,7 @@ export const SPEAKERS_DATA = [
     id: "spk-placeholder-03",
     name: "Rehan",
     title: "Change Maker & Leader",
-    img: "/images/placeholders/speaker.png",
+    img: "/sa/tedxiul/images/h.jpeg",
     bio: "A thought leader who will explore new paradigms and share ideas worth spreading. Full details will be revealed in the coming weeks."
   }
 ];
